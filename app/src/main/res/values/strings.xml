@@ -25,6 +25,8 @@
     <string name="profile">Profile</string>
     <string name="make_post">Make Post</string>
     <string name="make_toast">toast</string>
+    <string name="back">Navigate Back</string>
+    <string name="your_feed">Your Feed</string>
 
 
 </resources>

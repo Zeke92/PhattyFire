@@ -1,10 +1,12 @@
 package com.phattyfire.presentation.components
 
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Message
 import androidx.compose.material.icons.outlined.Doorbell
@@ -15,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -29,6 +32,10 @@ fun StandardScaffold(
     navController: NavController,
     modifier: Modifier = Modifier,
     showBottomBar: Boolean = true,
+    showToolbar: Boolean = true,
+    toolbarTitle: String? = null,
+    showBackArrow: Boolean = true,
+    navActions: @Composable RowScope.() -> Unit = {},
     bottomNavItems: List<BottomNavItem> = listOf(
         BottomNavItem(
             route = Screen.MainFeedScreen.route,
@@ -53,7 +60,9 @@ fun StandardScaffold(
         ),
     ),
     onFabClick: () -> Unit = {},
-    content: @Composable () -> Unit){
+    content: @Composable () -> Unit
+) {
+
     Scaffold(
         bottomBar = {
             if (showBottomBar) {
@@ -81,14 +90,15 @@ fun StandardScaffold(
             }
         },
         floatingActionButton = {
-            if(showBottomBar){
+            if (showBottomBar) {
                 FloatingActionButton(
                     backgroundColor = MaterialTheme.colors.primary,
                     onClick = onFabClick
-                ){
+                ) {
                     Icon(
                         imageVector = Icons.Default.Add,
-                        contentDescription = stringResource(id = R.string.make_toast
+                        contentDescription = stringResource(
+                            id = R.string.make_toast
                         )
                     )
                 }
@@ -98,7 +108,7 @@ fun StandardScaffold(
         isFloatingActionButtonDocked = true,
         floatingActionButtonPosition = FabPosition.Center,
         modifier = modifier
-    )  {
-            content()
+    ) {
+        content()
     }
 }

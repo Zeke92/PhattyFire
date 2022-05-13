@@ -8,8 +8,10 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.phattyfire.R
 import com.phattyfire.presentation.components.StandardScaffold
 import com.phattyfire.presentation.components.StandardTextField
 import com.phattyfire.presentation.ui.theme.PhattyFireTheme
@@ -37,20 +39,23 @@ class MainActivity : ComponentActivity() {
                             Screen.ChatScreen.route,
                             Screen.ActivityScreen.route,
                             Screen.ProfileScreen.route,
-
                         ),
+                        showBackArrow = navBackStackEntry?.destination?.route in listOf(
+                            Screen.MainFeedScreen.route,
+                            Screen.ChatScreen.route,
+                            Screen.ActivityScreen.route,
+                            Screen.ProfileScreen.route,
+                        ),
+
                         modifier = Modifier.fillMaxSize(),
                         onFabClick = {
-                            navController.navigate(Screen.MainFeedScreen.route)
+                            navController.navigate(Screen.CreatePostScreen.route)
                         }
-                        ) {
+                    ) {
                         Navigation(navController)
-
                     }
                 }
-
             }
         }
     }
 }
-

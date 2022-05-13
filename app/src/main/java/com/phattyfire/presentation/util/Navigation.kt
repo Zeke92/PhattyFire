@@ -1,14 +1,13 @@
 package com.phattyfire.presentation.util
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.phattyfire.presentation.MainFeedScreen
+import com.phattyfire.presentation.main_feed.MainFeedScreen
 import com.phattyfire.presentation.activity.ActivityScreen
 import com.phattyfire.presentation.chat.ChatScreen
+import com.phattyfire.presentation.create_post.CreatePostScreen
 import com.phattyfire.presentation.login.LoginScreen
 import com.phattyfire.presentation.profile.ProfileScreen
 import com.phattyfire.presentation.register.RegisterScreen
@@ -44,7 +43,9 @@ fun Navigation(navController: NavHostController) {
         composable(Screen.ProfileScreen.route){
             ProfileScreen(navController = navController)
         }
-
+        composable(Screen.CreatePostScreen.route){
+            CreatePostScreen(navController = navController)
+        }
 
     }
 
