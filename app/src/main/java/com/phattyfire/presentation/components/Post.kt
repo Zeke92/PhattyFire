@@ -39,7 +39,7 @@ import okhttp3.internal.userAgent
 
 @Composable
 fun Post(post: Post,
-        profilePictureSize: Dp = 75.dp
+         onPostClick: () -> Unit = {}
 ){
     Box(modifier = Modifier
         .fillMaxWidth()
@@ -48,10 +48,13 @@ fun Post(post: Post,
         Column(
             modifier = Modifier
             .fillMaxWidth()
-            .offset(y = profilePictureSize / 2f)
+            .offset(y = ProfilePictureSize / 2f)
             .clip(MaterialTheme.shapes.medium)
             .background(MediumGray)
             .shadow(5.dp)
+                .clickable {
+                    onPostClick()
+                }
         ) {
             Image(
                 painterResource(id = R.drawable.bannerforlogin),
@@ -129,7 +132,7 @@ fun Post(post: Post,
             contentDescription = "Profile picture",
             modifier = Modifier
                 .fillMaxWidth()
-                .size(profilePictureSize)
+                .size(ProfilePictureSize)
                 .clip(CircleShape)
                 .align(Alignment.TopCenter)
         )

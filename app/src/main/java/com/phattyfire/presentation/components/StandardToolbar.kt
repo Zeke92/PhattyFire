@@ -32,7 +32,8 @@ fun StandardToolbar(
                 }) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
-                        contentDescription = stringResource(id = R.string.back)
+                        contentDescription = stringResource(id = R.string.back),
+                        tint = MaterialTheme.colors.onBackground
                     )
 
                 }
@@ -41,6 +42,6 @@ fun StandardToolbar(
         }else null,
         actions = navActions,
         backgroundColor = MaterialTheme.colors.surface,
-        elevation = 5.dp
+        elevation = 0.dp
     )
 }
