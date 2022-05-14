@@ -27,6 +27,9 @@
     <string name="make_toast">toast</string>
     <string name="back">Navigate Back</string>
     <string name="your_feed">Your Feed</string>
+    <string name="liked">Liked</string>
+    <string name="comment_on">Commented on</string>
+    <string name="your_post">Your Post</string>
 
 
 </resources>
