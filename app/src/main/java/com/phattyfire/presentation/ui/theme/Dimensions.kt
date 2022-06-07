@@ -10,3 +10,4 @@ val SpacingLarge = 24.dp
 
 val ProfilePictureSize = 75.dp
 val ProfilePictureSmall = 30.dp
+val ProfilePictureLarge = 125.dp

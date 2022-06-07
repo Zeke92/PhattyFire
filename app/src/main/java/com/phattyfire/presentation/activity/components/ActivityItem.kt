@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.phattyfire.R
 import com.phattyfire.domain.models.Activity
 import com.phattyfire.domain.util.ActivityAction
@@ -61,8 +62,16 @@ fun ActivityItem(
                     withStyle(boldStyle){
                         append(actionText)
                     }
-                }
+                },
+                fontSize = 12.sp,
+                color = MaterialTheme.colors.onBackground
             )
+            Text(
+                text = activity.formattedTime,
+                textAlign = TextAlign.Right,
+                fontSize = 10.sp,
+                color = MaterialTheme.colors.onBackground
+                )
         }
 
     }
