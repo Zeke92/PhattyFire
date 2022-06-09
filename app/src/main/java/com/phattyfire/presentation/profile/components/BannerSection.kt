@@ -21,6 +21,7 @@ import com.phattyfire.presentation.util.toPx
 @Composable
 fun BannerSection(
     modifier: Modifier = Modifier,
+    imageModifier: Modifier = Modifier,
     iconSize: Dp = 30.dp,
     onFaceBookClick: () -> Unit = {},
     onInstagramClick: () -> Unit = {},
@@ -31,10 +32,11 @@ fun BannerSection(
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.untitledtest6),
+            painter = painterResource(id = R.drawable.test7),
             contentDescription = stringResource(id = R.string.banner_image),
-            modifier = Modifier
+            modifier = imageModifier
                 .fillMaxSize()
+
 
         )
         Box(

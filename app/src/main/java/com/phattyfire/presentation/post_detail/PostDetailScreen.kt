@@ -210,7 +210,7 @@ fun Comment(
                        contentDescription = null,
                        modifier = Modifier
                            .clip(CircleShape)
-                           .size(ProfilePictureSmall)
+                           .size(ProfilePictureSizeSmall)
                    )
                     Spacer(modifier = Modifier.width(SpacingSmall))
                     Text(

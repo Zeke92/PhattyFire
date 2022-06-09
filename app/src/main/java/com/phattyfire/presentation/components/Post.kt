@@ -39,6 +39,8 @@ import okhttp3.internal.userAgent
 
 @Composable
 fun Post(post: Post,
+         modifier: Modifier = Modifier,
+         showProfileImage: Boolean = true,
          onPostClick: () -> Unit = {}
 ){
     Box(modifier = Modifier
@@ -127,15 +129,17 @@ fun Post(post: Post,
             }
 
         }
-        Image(
-            painterResource(id = R.drawable.weeeed),
-            contentDescription = "Profile picture",
-            modifier = Modifier
-                .fillMaxWidth()
-                .size(ProfilePictureSize)
-                .clip(CircleShape)
-                .align(Alignment.TopCenter)
-        )
+        if (showProfileImage){
+            Image(
+                painterResource(id = R.drawable.weeeed),
+                contentDescription = "Profile picture",
+                modifier = Modifier
+                    .size(ProfilePictureSize)
+                    .clip(CircleShape)
+                    .align(Alignment.TopCenter)
+            )
+        }
+
     }
 }
 

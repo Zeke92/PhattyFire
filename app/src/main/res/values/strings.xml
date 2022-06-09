@@ -35,6 +35,11 @@
     <string name="banner_image">Banner Image</string>
     <string name="profile_image">Profile Image</string>
     <string name="edit">Edit</string>
+    <string name="followers">Followers</string>
+    <string name="following_count">Following Count</string>
+    <string name="posts">Posts</string>
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
 
 
 </resources>
